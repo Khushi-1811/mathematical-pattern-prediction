@@ -8,15 +8,15 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 # Load saved models
 @st.cache_resource
 def load_models():
-    next_value_model = tf.keras.models.load_model("/content/drive/MyDrive/Colab Notebooks/Project-1/Models/next_value_prediction_model-4.keras")
-    type_classification_model = tf.keras.models.load_model("/content/drive/MyDrive/Colab Notebooks/Project-1/Models/sequence_classification_model.keras")
-    coefficient_model = tf.keras.models.load_model("/content/drive/MyDrive/Colab Notebooks/Project-1/Models/coefficient_prediction_model-2.keras")
+    next_value_model = tf.keras.models.load_model("Models/next_value_prediction_model-4.keras")
+    type_classification_model = tf.keras.models.load_model("Models/sequence_classification_model.keras")
+    coefficient_model = tf.keras.models.load_model("Models/coefficient_prediction_model-2.keras")
     return next_value_model, type_classification_model, coefficient_model
 
 # Load preprocessing scalers
 @st.cache_data
 def load_preprocessed_data():
-    with open("/content/drive/MyDrive/Colab Notebooks/Project-1/Scalers/preprocessed_data.pkl", "rb") as f:
+    with open("Scalers/preprocessed_data.pkl", "rb") as f:
       preprocessed_data = pickle.load(f)
     return preprocessed_data
 
